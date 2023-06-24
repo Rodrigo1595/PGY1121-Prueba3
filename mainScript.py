@@ -11,8 +11,11 @@ while(menu):
     elif respuesta == 2:
         fp.limpiarPantalla()
         data = fp.buscarUsuario(lista)
+        fp.limpiarPantalla()
     elif respuesta == 3:
-        data
+        fp.limpiarPantalla()
+        data = fp.imprimirCertificado(lista)
+        fp.limpiarPantalla()
     elif respuesta == 4:
         menu = False
     #Herramienta DEV para debuggear lista

@@ -61,6 +61,49 @@ def buscarUsuario(listaUsuarios):
                 return
             else:
                 encontrado = True
-    
 
+#Modulo 3 Imprimir Certificado:
+def imprimirCertificado(listaUsuarios):
+    listaUsuariosMemoria = listaUsuarios
+    limpiarPantalla()
+    NIF = input("Ingrese NIF a buscar : ")
+    for i in range(len(listaUsuariosMemoria)):
+        if(listaUsuariosMemoria[i][0] == NIF ):
+            switch = True
+            while(switch):
+                limpiarPantalla()
+                seleccion = input("Que certificado desea obtener? : \n1)Certificado Nacimiento \n 2) Certificado Conyugal \n 3) Certificado UE Española \n Opc:")
+                if seleccion == "1":
+                    certNacimiento = input("Ingrese su fecha de nacimiento : ")
+                    print("-"*15 , "CERTIFICADO NACIMIENTO" , "-" * 15)
+                    print("NIF: ", listaUsuariosMemoria[i][0])
+                    print("NOMBRE :",listaUsuariosMemoria[i][1])
+                    print("FECHA NACIMIENTO : " , certNacimiento)
+                    input("Presione enter para continuar...")
+                    print("-"*15 , "*****************************" , "-" * 15)
+                    return
+                elif seleccion == "2":
+                    certConyugal = input("Ingrese su estado conyugal : ")
+                    print("-"*15 , "CERTIFICADO CONYUGAL" , "-" * 15)
+                    print("NIF: ", listaUsuariosMemoria[i][0])
+                    print("NOMBRE :",listaUsuariosMemoria[i][1])
+                    print("ESTADO CONYUGAL : " , certConyugal)
+                    input("Presione enter para continuar...")
+                    print("-"*15 , "*****************************" , "-" * 15)
+                    return
+                elif seleccion == "3":
+                    certUEE = listaUsuariosMemoria[i][3]
+                    print("-"*15 , "CERTIFICADO UNION EUROPEA ESPAÑOLA" , "-" * 15)
+                    print("NIF: ", listaUsuariosMemoria[i][0])
+                    print("NOMBRE :",listaUsuariosMemoria[i][1])
+                    print("¿Pertenece a la UEE? : " , certUEE)
+                    print("-"*15 , "*****************************" , "-" * 15)
+                    input("Presione enter para continuar...")
+                    return
+                else:
+                    input("Elegir una opcion válida ... Presione enter para continuar")
+    #Si llega a este punto , es porque no encontro al usuario ingresando su NIF en la lista , por lo tanto se aborta el proceso.
+    print("Vaya... Parece que ese usuario no está registrado en el sistema , abortando proceso de impresión ")
+    input("Presione Enter para continuar ...")
+    return False
             
