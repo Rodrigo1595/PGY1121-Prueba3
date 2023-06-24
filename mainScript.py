@@ -18,8 +18,9 @@ while(menu):
         fp.limpiarPantalla()
     elif respuesta == 4:
         menu = False
-    #Herramienta DEV para debuggear lista
-    elif respuesta == 5: 
+        print("¡Hasta Pronto!")
+    #Herramienta seleccion para debuggear lista
+    elif respuesta == 999: 
         print(lista)   
         input("Presionar Tecla")
         fp.limpiarPantalla()
